@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.nalin</groupId>
+	<artifactId>proj.euler</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<packaging>jar</packaging>
+
+	<properties>
+		<jdkLevel>1.8</jdkLevel>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<argLine>-javaagent:"${settings.localRepository}"/com/googlecode/jmockit/jmockit/1.0/jmockit-1.0.jar</argLine>
+	</properties>
+
+	<scm>
+		<connection>scm:git:https://github.com/Rig-Veda/Project-Euler.git</connection>
+		<url>scm:git:https://github.com/Rig-Veda/Project-Euler.git</url>
+		<developerConnection>scm:git:https://github.com/Rig-Veda/Project-Euler.git</developerConnection>
+	</scm>
+	
+	<dependencies>
+	</dependencies>
+
+	<build>
+		<plugins>
+		
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdkLevel}</source>
+					<target>${jdkLevel}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<useReleaseProfile>false</useReleaseProfile>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<providerImplementations>
+						<git>jgit</git>
+					</providerImplementations>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-jgit</artifactId>
+						<version>1.9</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			
+		</plugins>
+		
+	</build>
+	
+</project>
