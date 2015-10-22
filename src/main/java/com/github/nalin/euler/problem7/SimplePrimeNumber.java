@@ -25,7 +25,7 @@ public class SimplePrimeNumber implements PrimeNumberGenerator {
 			return false;
 		}
 
-		int ceil = (int) Math.ceil(number / (float) 2);
+		int ceil = (int) Math.sqrt(number);
 
 		for (int i = 2; i <= ceil; i++) {
 			if (number % i == 0) {

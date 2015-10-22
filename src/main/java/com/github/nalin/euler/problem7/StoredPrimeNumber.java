@@ -7,7 +7,7 @@ public class StoredPrimeNumber implements PrimeNumberGenerator {
 	@Override
 	public long getNthPrime(int n) {
 		
-		long[] primes = new long[n];
+		int[] primes = new int[n];
 		
 		int primeCounter = 0;
 		int i = 0;
@@ -26,14 +26,16 @@ public class StoredPrimeNumber implements PrimeNumberGenerator {
 		return i;
 	}
 
-	private boolean isPrime(int number, long[] primes, int primesLength) {
+	private boolean isPrime(int number, int[] primes, int primesLength) {
 
 		if (number < 2) {
 			return false;
 		}
-
+		
+		int c = (int) Math.sqrt(number);
+		
 		for (int i = 0; i < primesLength; i++) {
-			if (number % primes[i] == 0) {
+			if ( (primes[i] <= c) && (number % primes[i] == 0)) {
 				return false;
 			}
 		}
