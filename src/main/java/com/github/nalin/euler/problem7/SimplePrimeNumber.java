@@ -1,5 +1,8 @@
 package com.github.nalin.euler.problem7;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SimplePrimeNumber implements PrimeNumberGenerator {
 
 	@Override
@@ -34,5 +37,21 @@ public class SimplePrimeNumber implements PrimeNumberGenerator {
 		}
 
 		return true;
+	}
+
+	@Override
+	public List<Integer> getPrimes(int limit) {
+		
+		List<Integer> primes = new ArrayList<>();
+		
+		for(int i=2; i < limit; i++) {
+			
+			if(isPrime(i)) {
+				primes.add(i);
+			}
+		
+		}
+		
+		return primes;
 	}
 }

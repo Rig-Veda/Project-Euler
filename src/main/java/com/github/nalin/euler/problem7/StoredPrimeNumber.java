@@ -1,5 +1,8 @@
 package com.github.nalin.euler.problem7;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StoredPrimeNumber implements PrimeNumberGenerator {
 
 	
@@ -41,6 +44,11 @@ public class StoredPrimeNumber implements PrimeNumberGenerator {
 		}
 
 		return true;
+	}
+
+	@Override
+	public List<Integer> getPrimes(int limit) {
+		throw new UnsupportedOperationException();		
 	}
 	
 }
