@@ -1,6 +1,5 @@
 package com.github.nalin.euler.problem7;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class StoredPrimeNumber implements PrimeNumberGenerator {
